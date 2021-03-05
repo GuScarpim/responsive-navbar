@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import GlobalsStyles from './globalStyles';
-import Menu from './components/menu/Navbar'
+import Menu from './components/menu/Navbar';
 
 ReactDOM.render(
   <React.StrictMode>

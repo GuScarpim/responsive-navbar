@@ -46,7 +46,7 @@ export const Nav = styled.nav`
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #FFF;
+  background-color: #fdfdfdfa;
   align-items: center;
   position: relative;
 
@@ -124,17 +124,14 @@ export const Ul = styled.ul<INav>`
 
 export const Logo = styled.img`
   margin: 20px 50px 20px 7%;
-  width: 100px;
+  width: 160px;
   height: 70px;
+  object-fit: contain;
 
   @media (max-width: 1250px) {
     margin: 20px 50px 20px 5%;
   }
 
-  @media (max-width: 768px) {
-    width: 80px;
-    height: 50px;
-  }
 `
 
 export const LogoUl = styled.img`
@@ -143,7 +140,35 @@ export const LogoUl = styled.img`
 
   @media (max-width: 768px) {
     display: flex;
-    width: 80px;
-    height: 50px;
+    width: 160px;
+    height: 70px;
+    object-fit: contain;
+  }
+`
+export const Icon = styled.div`
+  width: 100vw;
+  height: calc(100vh - 112px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    object-fit: contain;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+    @keyframes App-logo-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
   }
 `

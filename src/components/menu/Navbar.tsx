@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
 
-// import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo.png';
 import Burger from './Burger';
 
 type Props = {
@@ -12,7 +12,7 @@ export default function Navbar(props: Props) {
   return (
     <>
       <S.Nav>
-        <S.Logo src={'../../assets/logo.png'} alt="Etio Soluções" />
+        <S.Logo src={Logo} alt="Etio Soluções" />
       </S.Nav>
       <Burger />
       {props.children}

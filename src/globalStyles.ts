@@ -1,10 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  input, button, textarea {
-    font-family: 'Zilla Slab';
-  }
-
   * {
     font-family: 'Zilla Slab';
   }
@@ -39,14 +35,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0px;
     margin: 0px;
-    /* background: #24292E; */
+    width: 100vw;
     overflow-y: auto;
     overflow-x: auto;
-
-    @media (max-width: 800px){
-      overflow-x: hidden;
-    }
-
+    background-color: #232831;
   }
 `
 
