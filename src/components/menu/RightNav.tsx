@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './styles';
 
 import Logo from '../../assets/logo.png';
@@ -7,80 +6,88 @@ import IconMegamen from '../../assets/megamen.png';
 import IconMario from '../../assets/mario.png';
 import IconTurtle from '../../assets/turtle.png';
 
-import { BrowserRouter as Router, Switch, Route, NavLink, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+  Redirect,
+} from 'react-router-dom';
 
 type Props = {
   open: boolean;
-}
+};
 
 function RightNav(props: Props) {
-
   return (
     <Router>
       <S.Ul open={props.open}>
         <S.LogoUl src={Logo} alt={'Gustavo Scarpim'} />
 
-        <NavLink to="/menu1"
+        <NavLink
+          to='/menu1'
           activeStyle={{
-            fontWeight: "bold",
-            color: "#0DADEA"
+            fontWeight: 'bold',
+            color: '#0DADEA',
           }}
         >
-          <li>Menu 1</li>
+          <S.Li>Menu 1</S.Li>
         </NavLink>
-        <NavLink to="/menu2"
+        <NavLink
+          to='/menu2'
           activeStyle={{
-            fontWeight: "bold",
-            color: "#0DADEA"
+            fontWeight: 'bold',
+            color: '#0DADEA',
           }}
         >
-          <li>Menu 2</li>
+          <S.Li>Menu 2</S.Li>
         </NavLink>
-        <NavLink to="/menu3"
+        <NavLink
+          to='/menu3'
           activeStyle={{
-            fontWeight: "bold",
-            color: "#0DADEA"
+            fontWeight: 'bold',
+            color: '#0DADEA',
           }}
         >
-          <li>Menu 3</li>
+          <S.Li>Menu 3</S.Li>
         </NavLink>
-        <NavLink to="/menu4"
+        <NavLink
+          to='/menu4'
           activeStyle={{
-            fontWeight: "bold",
-            color: "#0DADEA"
+            fontWeight: 'bold',
+            color: '#0DADEA',
           }}
         >
-          <li>Menu 4</li>
+          <S.Li>Menu 4</S.Li>
         </NavLink>
       </S.Ul>
 
-
       <Switch>
-        <Route exact path="/menu1">
+        <Route exact path='/menu1'>
           <S.Icon>
-            <img src={IconReact} alt="React" />
+            <S.Image src={IconReact} alt='React' />
           </S.Icon>
         </Route>
-        <Route exact path="/menu2" >
+        <Route exact path='/menu2'>
           <S.Icon>
-            <img src={IconMegamen} alt="Megamen" />
+            <S.Image src={IconMegamen} alt='Megamen' />
           </S.Icon>
         </Route>
-        <Route exact path="/menu3" >
+        <Route exact path='/menu3'>
           <S.Icon>
-            <img src={IconMario} alt="Mario" />
+            <S.Image src={IconMario} alt='Mario' />
           </S.Icon>
         </Route>
-        <Route exact path="/menu4" >
+        <Route exact path='/menu4'>
           <S.Icon>
-            <img src={IconTurtle} alt="Turtle" />
+            <S.Image src={IconTurtle} alt='Turtle' />
           </S.Icon>
         </Route>
 
         <Redirect to='/menu1' />
       </Switch>
-    </Router >
-  )
+    </Router>
+  );
 }
 
-export default RightNav
+export default RightNav;
