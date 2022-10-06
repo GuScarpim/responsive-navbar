@@ -1,20 +1,20 @@
-import * as S from './styles';
+import { Nav, Logo } from './styles'
 
-import Logo from '../../assets/logo.png';
-import Burger from './Burger';
+import IcLogo from '../../assets/logo.png'
+import Burger from './Burger'
 
 type Props = {
-  children?: ChildNode;
-};
+  children?: ChildNode
+}
 
 export default function Navbar(props: Props) {
   return (
     <>
-      <S.Nav>
-        <S.Logo src={Logo} alt='Gustavo Scarpim' />
-      </S.Nav>
+      <Nav>
+        <Logo src={IcLogo} alt='Gustavo Scarpim' />
+      </Nav>
       <Burger />
       {props.children}
     </>
-  );
+  )
 }
