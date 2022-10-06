@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import * as S from './styles';
+import { useState } from 'react'
+import { StyledBurger, Menus } from './styles'
 
-import RightNav from './RightNav';
+import RightNav from './RightNav'
 
 const Burger = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <>
-      <S.StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <S.Menus open={open} />
-        <S.Menus open={open} />
-        <S.Menus open={open} />
-      </S.StyledBurger>
+      <StyledBurger open={open} onClick={() => setOpen(!open)}>
+        <Menus open={open} />
+        <Menus open={open} />
+        <Menus open={open} />
+      </StyledBurger>
       <RightNav open={open} />
     </>
-  );
-};
-export default Burger;
+  )
+}
+export default Burger
