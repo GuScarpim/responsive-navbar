@@ -5,6 +5,7 @@ import IconReact from '../../assets/react.svg'
 import IconMegamen from '../../assets/megamen.png'
 import IconMario from '../../assets/mario.png'
 import IconTurtle from '../../assets/turtle.png'
+import IconLion from '../../assets/lion.png'
 
 import {
   BrowserRouter as Router,
@@ -47,6 +48,7 @@ function RightNav(props: Props) {
           activeStyle={{
             fontWeight: 'bold',
             color: '#0DADEA',
+            backgroundColor: 'black'
           }}
         >
           <Li>Menu 3</Li>
@@ -59,6 +61,15 @@ function RightNav(props: Props) {
           }}
         >
           <Li>Menu 4</Li>
+        </NavLink>
+        <NavLink
+          to='/menu5'
+          activeStyle={{
+            fontWeight: 'bold',
+            color: '#0DADEA',
+          }}
+        >
+          <Li>Menu 5</Li>
         </NavLink>
       </Ul>
 
@@ -81,6 +92,11 @@ function RightNav(props: Props) {
         <Route exact path='/menu4'>
           <Icon>
             <Image src={IconTurtle} alt='Turtle' />
+          </Icon>
+        </Route>
+        <Route exact path='/menu5'>
+          <Icon>
+            <Image src={IconLion} alt='Turtle' />
           </Icon>
         </Route>
 
