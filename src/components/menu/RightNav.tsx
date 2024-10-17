@@ -1,109 +1,67 @@
-import { Ul, Li, LogoUl, Icon, Image } from './styles'
-
-import Logo from '../../assets/logo.png'
-import IconReact from '../../assets/react.svg'
-import IconMegamen from '../../assets/megamen.png'
-import IconMario from '../../assets/mario.png'
-import IconTurtle from '../../assets/turtle.png'
-import IconLion from '../../assets/lion.png'
+import { Ul, Li, LogoUl, Icon, Image } from './styles';
+import Logo from '../../assets/logo.png';
+import IconReact from '../../assets/react.svg';
+import IconMegamen from '../../assets/megamen.png';
+import IconMario from '../../assets/mario.png';
+import IconTurtle from '../../assets/turtle.png';
+import IconLion from '../../assets/lion.png';
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   NavLink,
-  Redirect,
-} from 'react-router-dom'
+  Navigate,
+} from 'react-router-dom';
 
 type Props = {
-  open: boolean
-}
+  open: boolean;
+};
 
-function RightNav(props: Props) {
+const menuItems = [
+  { path: '/menu1', label: 'Menu 1', icon: IconReact, alt: 'React' },
+  { path: '/menu2', label: 'Menu 2', icon: IconMegamen, alt: 'Megamen' },
+  { path: '/menu3', label: 'Menu 3', icon: IconMario, alt: 'Mario' },
+  { path: '/menu4', label: 'Menu 4', icon: IconTurtle, alt: 'Turtle' },
+  { path: '/menu5', label: 'Menu 5', icon: IconLion, alt: 'Lion' },
+];
+
+function RightNav({ open }: Props) {
   return (
     <Router>
-      <Ul open={props.open}>
-        <LogoUl src={Logo} alt={'Gustavo Scarpim'} />
-
-        <NavLink
-          to='/menu1'
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#0DADEA',
-          }}
-        >
-          <Li>Menu 1</Li>
-        </NavLink>
-        <NavLink
-          to='/menu2'
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#0DADEA',
-          }}
-        >
-          <Li>Menu 2</Li>
-        </NavLink>
-        <NavLink
-          to='/menu3'
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#0DADEA',
-            backgroundColor: 'black'
-          }}
-        >
-          <Li>Menu 3</Li>
-        </NavLink>
-        <NavLink
-          to='/menu4'
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#0DADEA',
-          }}
-        >
-          <Li>Menu 4</Li>
-        </NavLink>
-        <NavLink
-          to='/menu5'
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#0DADEA',
-          }}
-        >
-          <Li>Menu 5</Li>
-        </NavLink>
+      <Ul open={open}>
+        <LogoUl src={Logo} alt='Gustavo Scarpim' />
+        {menuItems.map(({ path, label }) => (
+          <NavLink
+            key={path}
+            to={path}
+            style={({ isActive }) => ({
+              fontWeight: isActive ? 'bold' : 'normal',
+              color: isActive ? '#0DADEA' : '#000',
+            })}
+          >
+            <Li>{label}</Li>
+          </NavLink>
+        ))}
       </Ul>
 
-      <Switch>
-        <Route exact path='/menu1'>
-          <Icon>
-            <Image src={IconReact} alt='React' />
-          </Icon>
-        </Route>
-        <Route exact path='/menu2'>
-          <Icon>
-            <Image src={IconMegamen} alt='Megamen' />
-          </Icon>
-        </Route>
-        <Route exact path='/menu3'>
-          <Icon>
-            <Image src={IconMario} alt='Mario' />
-          </Icon>
-        </Route>
-        <Route exact path='/menu4'>
-          <Icon>
-            <Image src={IconTurtle} alt='Turtle' />
-          </Icon>
-        </Route>
-        <Route exact path='/menu5'>
-          <Icon>
-            <Image src={IconLion} alt='Turtle' />
-          </Icon>
-        </Route>
+      <Routes>
+        {menuItems.map(({ path, icon, alt }) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              <Icon>
+                <Image src={icon} alt={alt} />
+              </Icon>
+            }
+          />
+        ))}
 
-        <Redirect to='/menu1' />
-      </Switch>
+        <Route path="*" element={<Navigate to="/menu1" />} />
+      </Routes>
     </Router>
-  )
+  );
 }
 
-export default RightNav
+export default RightNav;
