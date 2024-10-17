@@ -18,7 +18,7 @@ Esse projeto foi desenvolvido para mostrar uma forma simples e fácil de criar u
 
 <b>2º Abra o seu terminal e na raiz do projeto rode o comando `npm install` ou `yarn` para baixar todas as depêndencias do projeto.</b>
 
-<b>3º Rode o comando "yarn start" ou "npm start".</b>
+<b>3º Rode o comando "yarn dev" ou "npm dev".</b>
 
 # Desenvolvido por Gustavo Scarpim:
 
